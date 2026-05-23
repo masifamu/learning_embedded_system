@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Congrats App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #4facfe;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #4facfe;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2196f3;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #222;
+      font-weight: bold;
+      min-height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Congratulations 🎉</h1>
+
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+
+    <button onclick="showMessage()">Celebrate</button>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const name = document.getElementById("nameInput").value.trim();
+      const messageBox = document.getElementById("message");
+
+      if (name === "") {
+        messageBox.innerHTML = "Please enter your name!";
+        return;
+      }
+
+      messageBox.innerHTML =
+        `🎊 Congratulations, ${name}! 🎊<br>You did an amazing job!`;
+    }
+  </script>
+
+</body>
+</html>
